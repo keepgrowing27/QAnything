@@ -149,7 +149,7 @@ gpu_model=$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits -i $gp
 # 从GPU型号中提取基本型号用于模糊匹配
 base_gpu_model=$(echo $gpu_model | grep -o '^[^-]*')
 # nvidia RTX 30系列或40系列或A系列，比如A10，A30，A30，A100，A800
-gpu_series=$(echo $gpu_model | grep -oP '(RTX\s*(30|40)|A(10|30|40|100|800))')
+gpu_series=$(echo $gpu_model | grep -oP '(RTX\s*(30|40)|A(10|30|40|100|800|5000))')
 #if ! command -v jq &> /dev/null; then
 #    echo "Error: jq 命令不存在，请使用 sudo apt update && sudo apt-get install jq 安装，再重新启动。"
 #    exit 1
